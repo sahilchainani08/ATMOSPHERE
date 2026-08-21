@@ -1,0 +1,336 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cafe-page {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-image: url("/images/cafe.jpg");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.top-bar {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 25px 40px;
+}
+
+.top-bar h1 {
+  font-size: 24px;
+  letter-spacing: 4px;
+}
+
+.online {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 16px;
+
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 30px;
+
+  backdrop-filter: blur(10px);
+}
+
+.online span {
+  width: 8px;
+  height: 8px;
+
+  background: #4ade80;
+  border-radius: 50%;
+}
+
+.cafe-content {
+  position: relative;
+  z-index: 2;
+
+  height: calc(100vh - 90px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+.environment-label {
+  font-size: 13px;
+  letter-spacing: 4px;
+  opacity: 0.8;
+}
+
+.cafe-content h2 {
+  margin-top: 8px;
+  font-size: clamp(42px, 6vw, 80px);
+  font-weight: 600;
+}
+
+.progress-section input {
+  flex: 1;
+  height: 4px;
+  cursor: pointer;
+  accent-color: white;
+}
+
+/* =========================
+   ATMOSPHERE MUSIC PLAYER
+   ========================= */
+
+.music-player {
+  position: fixed;
+  z-index: 100;
+
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+
+  width: min(680px, calc(100% - 40px));
+  height: 58px;
+
+  padding: 8px 14px;
+
+  display: grid;
+  grid-template-columns: 180px 120px 1fr;
+  align-items: center;
+  gap: 15px;
+
+  background: rgba(18, 14, 11, 0.68);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  border-radius: 16px;
+
+  color: white;
+
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+
+/* SONG */
+
+.song-info {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  min-width: 0;
+}
+
+.song-info {
+  min-width: 0;
+}
+
+.song-details h3 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.song-details p {
+  margin: 4px 0 0;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+
+/* CONTROLS */
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.control-button,
+.play-button {
+  border: none;
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.18s ease,
+    opacity 0.18s ease;
+}
+
+.control-button {
+  width: 30px;
+  height: 30px;
+
+  background: transparent;
+
+  opacity: 0.65;
+}
+
+.control-button:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.control-button svg {
+  width: 17px;
+  height: 17px;
+
+  fill: none;
+  stroke: white;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+/* PLAY / PAUSE */
+
+.play-button {
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  box-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.3);
+}
+
+.play-button:hover {
+  transform: scale(1.08);
+}
+
+.play-button svg {
+  width: 15px;
+  height: 15px;
+
+  fill: none;
+  stroke: #2d1c12;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+/* PROGRESS */
+
+.progress-section {
+  display: flex;
+  align-items: center;
+  visibility: visible;
+  gap: 8px;
+
+  min-width: 0;
+
+  font-size: 9px;
+
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.progress-section input {
+  flex: 1;
+
+  min-width: 80px;
+
+  appearance: none;
+
+  height: 3px;
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.25);
+
+  cursor: pointer;
+
+  outline: none;
+}
+
+.progress-section input::-webkit-slider-thumb {
+  appearance: none;
+
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  cursor: pointer;
+}
+
+.progress-section input::-moz-range-thumb {
+  width: 9px;
+  height: 9px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: white;
+
+  cursor: pointer;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .music-player {
+    width: calc(100% - 24px);
+
+    bottom: 12px;
+
+    grid-template-columns: 1fr auto;
+
+    gap: 8px;
+
+    padding: 11px 13px;
+  }
+
+  .progress-section {
+    grid-column: 1 / -1;
+  }
+
+}
+
+.online {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.online-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 6px #4ade80;
+}
