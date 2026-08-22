@@ -30,8 +30,8 @@ function Home() {
           </div>
 
           <div className="environment-card coming-card">
-            <span className="environment-icon">🚚</span>
-            <span className="environment-name">TRUCK</span>
+            <span className="environment-icon">📺</span>
+            <span className="environment-name">90's Hit</span>
             <span className="coming-label">COMING SOON</span>
           </div>
 
