@@ -5,6 +5,12 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
+@media (max-width: 768px) {
+  .car-page {
+    background-image: url("/images/car-mobile.png");
+  }
+}
 .current-time {
   color: white;
 }
@@ -19,9 +25,5 @@
 .atmosphere-title h1 {
   color: white;
 }
-@media (max-width: 600px) {
-  .car-page {
-    background-position: 50% center;
-    background-size: cover;
-  }
-}
+
+ 

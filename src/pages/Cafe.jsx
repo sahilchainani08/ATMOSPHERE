@@ -36,7 +36,7 @@ function Cafe() {
 
         <div className="atmosphere-info">
           <div className="atmosphere-title">
-            <h1>ATMOSPHERE</h1>
+            <h1>CAFE</h1>
           </div>
 
           <div className="current-time">

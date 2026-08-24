@@ -16,6 +16,12 @@
   font-family: Arial, sans-serif;
 }
 
+@media (max-width: 768px) {
+  .cafe-page {
+    background-image: url("/images/cafe-mobile.png");
+  }
+}
+
 .overlay {
   position: absolute;
   inset: 0;
